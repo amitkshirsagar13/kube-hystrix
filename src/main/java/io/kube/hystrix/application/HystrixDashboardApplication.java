@@ -10,7 +10,6 @@ import org.springframework.cloud.netflix.turbine.EnableTurbine;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -38,13 +37,12 @@ import io.kube.hystrix.stream.MockStreamServlet;
  */
 
 @Configuration
-@ComponentScan(useDefaultFilters = true, basePackages = { "io.lms.hystrix.security" })
+@ComponentScan(useDefaultFilters = true, basePackages = { "io.kube.hystrix.security" })
 @EnableAutoConfiguration
 @Controller
 @EnableDiscoveryClient
 @EnableHystrixDashboard
 @EnableTurbine
-@Import(TurbineConfiguration.class)
 public class HystrixDashboardApplication extends SpringBootServletInitializer {
 
 	@RequestMapping("/")
