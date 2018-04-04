@@ -22,7 +22,7 @@ spec:
       - name: {{.Values.application}}
         image: "amitkshirsagar13/{{.Values.application}}:{{.Values.commit}}"
         ports:
-        - containerPort: 8990
+        - containerPort: 1234
         env:
         - name: spring.profiles.active
           value: "{{.Values.profile}}"
@@ -54,8 +54,8 @@ metadata:
   namespace: {{.Values.branch}}
 spec:
   ports:
-  - port: 8090
-    targetPort: 8990
+  - port: 8234
+    targetPort: 1234
   selector:
     app: {{.Values.application}}
 ---
@@ -84,5 +84,5 @@ spec:
         paths:
           - backend:
               serviceName: {{.Values.application}}
-              servicePort: 8090
+              servicePort: 8234
             path: /
