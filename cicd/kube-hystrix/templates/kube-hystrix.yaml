@@ -22,7 +22,7 @@ spec:
       - name: {{.Values.application}}
         image: "amitkshirsagar13/{{.Values.application}}:{{.Values.commit}}"
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         env:
         - name: spring.profiles.active
           value: "{{.Values.profile}}"
@@ -57,7 +57,7 @@ metadata:
 spec:
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 80
   selector:
     app: {{.Values.application}}
 ---
