@@ -80,6 +80,11 @@
 			<artifactId>spring-cloud-starter-turbine</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>io.fabric8.kubeflix</groupId>
+			<artifactId>turbine-discovery</artifactId>
+			<version>1.0.28</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
