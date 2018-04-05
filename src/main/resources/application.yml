@@ -1,3 +1,8 @@
+server: 
+  display-name: ${VHOSTNAME:${HOSTNAME:localhost.shinigami.io}}
+  address: ${HOSTNAME:localhost.shinigami.io}
+  port: ${VPORT:1234}
+  context-path: /
 spring:
   profiles:
     active: local
