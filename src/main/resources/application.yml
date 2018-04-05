@@ -1,3 +1,9 @@
 spring:
   profiles:
     active: local
+ribbon:
+  eureka:
+    enabled: false
+eureka:
+  client:
+    enabled: false
