@@ -22,14 +22,14 @@ spec:
       - name: {{.Values.application}}
         image: "amitkshirsagar13/{{.Values.application}}:{{.Values.commit}}"
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         env:
         - name: spring.profiles.active
           value: "{{.Values.profile}}"
         - name: VHOSTNAME
           value: "{{.Values.application}}.{{.Values.branch}}.k8m.io"
         - name: VPORT
-          value: "80"
+          value: "8080"
         - name: VEUREKAHOST
           value: kube-eureka
         - name: VEUREKAPORT
@@ -57,7 +57,7 @@ metadata:
 spec:
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 8080
   selector:
     app: {{.Values.application}}
 ---
